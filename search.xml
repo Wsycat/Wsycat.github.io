@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2019%2F04%2F10%2FKaggle%E8%B0%83%E7%A0%94%2F</url>
-    <content type="text"><![CDATA[title:Kaggle调研Kaggle简介：Kaggle是一个数据建模和数据分析竞赛平台。企业和研究者可在其上发布数据，统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型。这一众包模式依赖于这一事实，即有众多策略可以用于解决几乎所有预测建模的问题，而研究者不可能在一开始就了解什么方法对于特定问题是最为有效的。Kaggle的目标则是试图通过众包的形式来解决这一难题，进而使数据科学成为一场运动。2017年3月8日谷歌官方博客宣布收购Kaggle。 比赛类型：比赛类型按照参赛者分为公开赛General和为大学团体提供的Kaggle-in-Class项目。 ### 比赛按照比赛标签分为： Featured：是瞄准商业问题带有奖金的公开竞赛，竞争激烈，允许团队参赛和个人参赛（solo）。 Research：竞赛通常是机器学习前沿技术或者公益性质的题目。竞赛奖励可能是现金，也有一部分以会议邀请、发表论文的形式奖励。 Recruitment：赞助企业寻求数据科学家、算法设计人才的渠道。只允许个人参赛，不接受团队报名。 Getting start：相当于新手村，由三个经典的竞赛题来进行入门教学。三道题分别是手写数字识别、泰坦尼克、房价预测。 Master：大师邀请赛。 Playground Analytics]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F04%2F06%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
