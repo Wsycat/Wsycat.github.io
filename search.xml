@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Kaggle调研]]></title>
-    <url>%2F2019%2F04%2F10%2FKaggle%E8%B0%83%E7%A0%94%2F</url>
-    <content type="text"><![CDATA[Kaggle简介：Kaggle是一个数据建模和数据分析竞赛平台。企业和研究者可在其上发布数据，统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型。这一众包模式依赖于这一事实，即有众多策略可以用于解决几乎所有预测建模的问题，而研究者不可能在一开始就了解什么方法对于特定问题是最为有效的。Kaggle的目标则是试图通过众包的形式来解决这一难题，进而使数据科学成为一场运动。2017年3月8日谷歌官方博客宣布收购Kaggle。 Competitions：比赛类型：比赛类型按照参赛者分为公开赛General和为大学团体提供的Kaggle-in-Class项目。 比赛按照比赛标签分为： Featured：是瞄准商业问题带有奖金的公开竞赛，竞争激烈，允许团队参赛和个人参赛（solo）。 Research：竞赛通常是机器学习前沿技术或者公益性质的题目。竞赛奖励可能是现金，也有一部分以会议邀请、发表论文的形式奖励。 Recruitment：赞助企业寻求数据科学家、算法设计人才的渠道。只允许个人参赛，不接受团队报名。 Getting start：相当于新手村，由三个经典的竞赛题来进行入门教学。三道题分别是手写数字识别、泰坦尼克、房价预测。 Master：大师邀请赛。 Playground：游乐场。 竞赛流程：选一个题目&gt;&gt;下载数据&gt;&gt;训练模型&gt;&gt;提交结果&gt;&gt;查看排名&gt;&gt;优化模型（迭代）&gt;&gt;最终提交&gt;&gt;比赛结束。 Datasets：竞赛题目上指向的数据库和这个Datasets指向的是同一个地方，这里可以下载到提交结果的示范、测试集、训练集。Kaggle的数据常用csv格式，提交结果也为csv格式。 Kernels ：英文直译为核心，内核。这里是Kaggle其他参赛者自愿公开代码互相学习的地方。这一办款同样支持在线运行和调试代码，目前支持Python、R，同样支持诸如numpy、pandas之类的数据分析库。 这里可以通过对编程语言和标签等进行选择。当你想要学习别人是如何清洗数据的时候，标签选择data cleaning会给你带来便利。 Discussion：Kaggle讨论区以及网站论坛：]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Kaggle调研</title>
+      <link href="/2019/04/10/Kaggle%E8%B0%83%E7%A0%94/"/>
+      <url>/2019/04/10/Kaggle%E8%B0%83%E7%A0%94/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Kaggle简介"><a href="#Kaggle简介" class="headerlink" title="Kaggle简介"></a>Kaggle简介</h1><p><strong>Kaggle</strong>是一个<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BB%BA%E6%A8%A1" target="_blank" rel="noopener">数据建模</a>和<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90" target="_blank" rel="noopener">数据分析</a>竞赛平台。企业和研究者可在其上发布数据，统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型。这一<a href="https://zh.wikipedia.org/wiki/%E4%BC%97%E5%8C%85" target="_blank" rel="noopener">众包</a>模式依赖于这一事实，即有众多策略可以用于解决几乎所有预测建模的问题，而研究者不可能在一开始就了解什么方法对于特定问题是最为有效的。Kaggle的目标则是试图通过众包的形式来解决这一难题，进而使<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6" target="_blank" rel="noopener">数据科学</a>成为一场运动。2017年3月8日谷歌官方博客宣布收购Kaggle。</p><h1 id="Competitions"><a href="#Competitions" class="headerlink" title="Competitions"></a>Competitions</h1><h2 id="比赛类型"><a href="#比赛类型" class="headerlink" title="比赛类型"></a>比赛类型</h2><p>比赛类型按照参赛者分为公开赛General和为大学团体提供的Kaggle-in-Class项目。<img src="\img\kaggle比赛类型.png" alt="kaggle比赛类型"></p><p>比赛按照比赛标签分为：</p><ol><li><strong>Featured：</strong>是瞄准商业问题带有奖金的公开竞赛，竞争激烈，允许团队参赛和个人参赛（solo）。</li><li><strong>Research</strong>：竞赛通常是机器学习前沿技术或者公益性质的题目。竞赛奖励可能是现金，也有一部分以会议邀请、发表论文的形式奖励。</li><li><strong>Recruitment</strong>：赞助企业寻求数据科学家、算法设计人才的渠道。只允许个人参赛，不接受团队报名。</li><li><strong>Getting start</strong>：相当于新手村，由三个经典的竞赛题来进行入门教学。三道题分别是<a href="https://www.kaggle.com/c/digit-recognizer" target="_blank" rel="noopener">手写数字识别</a>、<a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">泰坦尼克</a>、<a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="noopener">房价预测</a>。</li><li><strong>Master</strong>：大师邀请赛。</li><li><strong>Playground</strong>：游乐场。</li></ol><h1 id="竞赛流程"><a href="#竞赛流程" class="headerlink" title="竞赛流程"></a>竞赛流程</h1><p>选一个题目&gt;&gt;下载数据&gt;&gt;训练模型&gt;&gt;提交结果&gt;&gt;查看排名&gt;&gt;优化模型（迭代）&gt;&gt;最终提交&gt;&gt;比赛结束。</p><h1 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h1><p>竞赛题目上指向的数据库和这个Datasets指向的是同一个地方，这里可以下载到提交结果的示范、测试集、训练集。Kaggle的数据常用csv格式，提交结果也为csv格式。</p><p><img src="\img\kaggle比赛类型.png" alt></p><h1 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h1><p>英文直译为核心，内核。这里是Kaggle其他参赛者自愿公开代码互相学习的地方。这一办款同样支持在线运行和调试代码，目前支持Python、R，同样支持诸如numpy、pandas之类的数据分析库。</p><p><img src="\img\kagglekernels.png" alt></p><p>这里可以通过对编程语言和标签等进行选择。当你想要学习别人是如何清洗数据的时候，标签选择data cleaning会给你带来便利。</p><h1 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h1><p>Kaggle讨论区以及网站论坛：</p><p><img src="\img\kagglediscussion.png" alt></p>]]></content>
+      
+      
       <categories>
-        <category>Kaggle</category>
+          
+          <category> Kaggle </category>
+          
       </categories>
-      <tags>
-        <tag>Kaggle</tag>
-        <tag>调研</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Kaggle </tag>
+            
+            <tag> 调研 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
