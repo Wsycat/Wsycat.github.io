@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F04%2F06%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title></title>
+      <link href="/2019/04/10/Kaggle%E8%B0%83%E7%A0%94/"/>
+      <url>/2019/04/10/Kaggle%E8%B0%83%E7%A0%94/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Kaggle调研"><a href="#Kaggle调研" class="headerlink" title="Kaggle调研"></a>Kaggle调研</h1><h2 id="Kaggle简介："><a href="#Kaggle简介：" class="headerlink" title="Kaggle简介："></a>Kaggle简介：</h2><p><strong>Kaggle</strong>是一个<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%BB%BA%E6%A8%A1" target="_blank" rel="noopener">数据建模</a>和<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90" target="_blank" rel="noopener">数据分析</a>竞赛平台。企业和研究者可在其上发布数据，统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型。这一<a href="https://zh.wikipedia.org/wiki/%E4%BC%97%E5%8C%85" target="_blank" rel="noopener">众包</a>模式依赖于这一事实，即有众多策略可以用于解决几乎所有预测建模的问题，而研究者不可能在一开始就了解什么方法对于特定问题是最为有效的。Kaggle的目标则是试图通过众包的形式来解决这一难题，进而使<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6" target="_blank" rel="noopener">数据科学</a>成为一场运动。2017年3月8日谷歌官方博客宣布收购Kaggle。</p><h2 id="比赛类型："><a href="#比赛类型：" class="headerlink" title="比赛类型："></a>比赛类型：</h2><p>比赛类型按照参赛者分为公开赛General和为大学团体提供的Kaggle-in-Class项目。<img src="I:\Personal\Blog\blog\img\kaggle比赛类型.png" alt></p><p>### </p><p>比赛按照比赛标签分为：</p><ol><li><strong>Featured：</strong>是瞄准商业问题带有奖金的公开竞赛，竞争激烈，允许团队参赛和个人参赛（solo）。</li><li><strong>Research</strong>：竞赛通常是机器学习前沿技术或者公益性质的题目。竞赛奖励可能是现金，也有一部分以会议邀请、发表论文的形式奖励。</li><li><strong>Recruitment</strong>：赞助企业寻求数据科学家、算法设计人才的渠道。只允许个人参赛，不接受团队报名。</li><li><strong>Getting start</strong>：相当于新手村，由三个经典的竞赛题来进行入门教学。三道题分别是<a href="https://www.kaggle.com/c/digit-recognizer" target="_blank" rel="noopener">手写数字识别</a>、<a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">泰坦尼克</a>、<a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="noopener">房价预测</a>。</li><li><strong>Master</strong>：大师邀请赛。</li><li><strong>Playground</strong></li><li><strong>Analytics</strong></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/04/06/hello-world/"/>
+      <url>/2019/04/06/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
