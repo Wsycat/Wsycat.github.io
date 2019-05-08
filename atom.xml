@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Wsycat/"/>
-  <updated>2019-04-11T12:55:20.888Z</updated>
+  <updated>2019-05-08T09:06:46.640Z</updated>
   <id>https://github.com/Wsycat/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>目标检测</title>
+    <link href="https://github.com/Wsycat/2019/04/26/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    <id>https://github.com/Wsycat/2019/04/26/目标检测/</id>
+    <published>2019-04-26T04:34:45.000Z</published>
+    <updated>2019-05-08T09:06:46.640Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>目标检测是计算机视觉领域内一个长期存在的基础性难题，几十年来也一直都是一个活跃的研究领域。目标检测的目标是确定某张给定图像中是否存在给定类别（比如人、车、自行车、狗和猫）的目标实例；如果存在，就返回每个目标实例的空间位置和覆盖范围。作为图像理解和计算机视觉的基石，目标检测是解决分割、场景理解、目标追踪、图像描述、事件检测和活动识别等更复杂更高层次的视觉任务的基础。目标检测在人工智能和信息技术的许多领域都有广泛的应用，包括机器人视觉、消费电子产品、安保、自动驾驶、人机交互、基于内容的图像检索、智能视频监控和增强现实。</p><h1 id="目标检测常见算法"><a href="#目标检测常见算法" class="headerlink" title="目标检测常见算法"></a>目标检测常见算法</h1><h2 id="目标检测实现的一般思路"><a href="#目标检测实现的一般思路" class="headerlink" title="目标检测实现的一般思路"></a>目标检测实现的一般思路</h2><p>目标检测要实现的无非于解决目标是什么、目标在哪儿这两个问题。目前学术和工业界出现的目标检测算法分成3类：</p><ol><li><p>传统的目标检测算法：Cascade + HOG/DPM + Haar/SVM以及上述方法的诸多改进、优化；</p></li><li><p>候选区域/窗 + 深度学习分类：通过提取候选区域，并对相应区域进行以深度学习方法为主的分类的方案，如：<br> R-CNN（Selective Search + CNN + SVM）<br> SPP-net（ROI Pooling）<br> Fast R-CNN（Selective Search + CNN + ROI）<br> Faster R-CNN（RPN + CNN + ROI）<br> R-FCN</p></li><li><p>基于深度学习的回归方法：YOLO/SSD/DenseBox 等方法；以及最近出现的结合RNN算法的RRC detection；结合DPM的Deformable CNN等。</p></li></ol><p>其中2属于 2-stage模型，3属于1-stage模型，类型区别主要取决于它实现步骤上的区别，2类别是选框与分类两步走，3类别是对预测的目标物体进行回归。本文主要围绕2类型的检测算法进行介绍。</p><h1 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h1><h2 id="R-CNN的简要步骤"><a href="#R-CNN的简要步骤" class="headerlink" title="R-CNN的简要步骤"></a>R-CNN的简要步骤</h2><p>(1) 输入测试图像<br>(2) 利用选择性搜索Selective Search算法在图像中从下到上提取2000个左右的可能包含物体的候选区域Region Proposal<br>(3) 因为取出的区域大小各自不同，所以需要将每个Region Proposal缩放（warp）成统一的227x227的大小并输入到CNN，将CNN的fc7层的输出作为特征<br>(4) 将每个Region Proposal提取到的CNN特征输入到SVM进行分类</p><h2 id="存在问题及改进方式"><a href="#存在问题及改进方式" class="headerlink" title="存在问题及改进方式"></a>存在问题及改进方式</h2><p>问题1：通过selective search提取2000个候选框之后要对每一个框进行特征提取并进行svm分类，计算量相当大，导致检测速度变得异常慢。</p><p>解决方式：先对整个图像进行一次特征提取，然后只需要region proposal在原图的位置映射到卷积特征图上，这样对于一张图像我们只需要提取一次特征就好了。</p><p>问题2：全连接层的输入是固定长度，这时候就需要对图片进行resize操作，会导致失真。</p><p>解决方式：Spatial Pyramid Pooling（空间金字塔池化），在全连接层之前接入一个SPP结构，然后将之输入到全连接层进行分类。</p><p><img src="\source\img\使用SPP层前后的对比.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;目标检测是计算机视觉领域内一个长期存在的基础性难题，几十年来也一直都是一个活跃的研究领域。目标检测的目标是确定某张给定图像中是否存在给定类别
+      
+    
+    </summary>
+    
+      <category term="机器视觉" scheme="https://github.com/Wsycat/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    
+    
+      <category term="目标检测" scheme="https://github.com/Wsycat/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="R-CNN" scheme="https://github.com/Wsycat/tags/R-CNN/"/>
+    
+      <category term="Fast R-CNN" scheme="https://github.com/Wsycat/tags/Fast-R-CNN/"/>
+    
+      <category term="Faster R-CNN" scheme="https://github.com/Wsycat/tags/Faster-R-CNN/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划</title>

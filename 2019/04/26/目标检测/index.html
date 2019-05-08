@@ -103,13 +103,20 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wings&#39; Blog">
-<meta property="og:url" content="https://github.com/Wsycat/archives/2019/index.html">
+  <meta name="description" content="前言目标检测是计算机视觉领域内一个长期存在的基础性难题，几十年来也一直都是一个活跃的研究领域。目标检测的目标是确定某张给定图像中是否存在给定类别（比如人、车、自行车、狗和猫）的目标实例；如果存在，就返回每个目标实例的空间位置和覆盖范围。作为图像理解和计算机视觉的基石，目标检测是解决分割、场景理解、目标追踪、图像描述、事件检测和活动识别等更复杂更高层次的视觉任务的基础。目标检测在人工智能和信息技术的">
+<meta name="keywords" content="目标检测,R-CNN,Fast R-CNN,Faster R-CNN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="目标检测">
+<meta property="og:url" content="https://github.com/Wsycat/2019/04/26/目标检测/index.html">
 <meta property="og:site_name" content="Wings&#39; Blog">
+<meta property="og:description" content="前言目标检测是计算机视觉领域内一个长期存在的基础性难题，几十年来也一直都是一个活跃的研究领域。目标检测的目标是确定某张给定图像中是否存在给定类别（比如人、车、自行车、狗和猫）的目标实例；如果存在，就返回每个目标实例的空间位置和覆盖范围。作为图像理解和计算机视觉的基石，目标检测是解决分割、场景理解、目标追踪、图像描述、事件检测和活动识别等更复杂更高层次的视觉任务的基础。目标检测在人工智能和信息技术的">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/source/img/使用SPP层前后的对比.png">
+<meta property="og:updated_time" content="2019-05-08T09:06:46.640Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wings&#39; Blog">
+<meta name="twitter:title" content="目标检测">
+<meta name="twitter:description" content="前言目标检测是计算机视觉领域内一个长期存在的基础性难题，几十年来也一直都是一个活跃的研究领域。目标检测的目标是确定某张给定图像中是否存在给定类别（比如人、车、自行车、狗和猫）的目标实例；如果存在，就返回每个目标实例的空间位置和覆盖范围。作为图像理解和计算机视觉的基石，目标检测是解决分割、场景理解、目标追踪、图像描述、事件检测和活动识别等更复杂更高层次的视觉任务的基础。目标检测在人工智能和信息技术的">
+<meta name="twitter:image" content="https://github.com/source/img/使用SPP层前后的对比.png">
 
 
 
@@ -119,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://github.com/Wsycat/archives/2019/">
+  <link rel="canonical" href="https://github.com/Wsycat/2019/04/26/目标检测/">
 
 
 
@@ -129,7 +136,7 @@
   };
 </script>
 
-  <title>归档 | Wings' Blog</title>
+  <title>目标检测 | Wings' Blog</title>
   
 
 
@@ -177,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/Wsycat" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -288,7 +295,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -317,28 +324,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -385,148 +370,266 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wsycat/2019/04/26/目标检测/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Whj">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headpic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wings' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">目标检测
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-26 12:34:45" itemprop="dateCreated datePublished" datetime="2019-04-26T12:34:45+08:00">2019-04-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-08 17:06:46" itemprop="dateModified" datetime="2019-05-08T17:06:46+08:00">2019-05-08</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器视觉/" itemprop="url" rel="index"><span itemprop="name">机器视觉</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/26/目标检测/" itemprop="url">
+          
             
-              <span itemprop="name">目标检测</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-26T12:34:45+08:00" content="2019-04-26">
-          04-26
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/11/动态规划/" itemprop="url">
-            
-              <span itemprop="name">动态规划</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-11T09:19:04+08:00" content="2019-04-11">
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/10/Kaggle调研/" itemprop="url">
-            
-              <span itemprop="name">Kaggle调研</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-10T19:06:39+08:00" content="2019-04-10">
-          04-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>目标检测是计算机视觉领域内一个长期存在的基础性难题，几十年来也一直都是一个活跃的研究领域。目标检测的目标是确定某张给定图像中是否存在给定类别（比如人、车、自行车、狗和猫）的目标实例；如果存在，就返回每个目标实例的空间位置和覆盖范围。作为图像理解和计算机视觉的基石，目标检测是解决分割、场景理解、目标追踪、图像描述、事件检测和活动识别等更复杂更高层次的视觉任务的基础。目标检测在人工智能和信息技术的许多领域都有广泛的应用，包括机器人视觉、消费电子产品、安保、自动驾驶、人机交互、基于内容的图像检索、智能视频监控和增强现实。</p>
+<h1 id="目标检测常见算法"><a href="#目标检测常见算法" class="headerlink" title="目标检测常见算法"></a>目标检测常见算法</h1><h2 id="目标检测实现的一般思路"><a href="#目标检测实现的一般思路" class="headerlink" title="目标检测实现的一般思路"></a>目标检测实现的一般思路</h2><p>目标检测要实现的无非于解决目标是什么、目标在哪儿这两个问题。目前学术和工业界出现的目标检测算法分成3类：</p>
+<ol>
+<li><p>传统的目标检测算法：Cascade + HOG/DPM + Haar/SVM以及上述方法的诸多改进、优化；</p>
+</li>
+<li><p>候选区域/窗 + 深度学习分类：通过提取候选区域，并对相应区域进行以深度学习方法为主的分类的方案，如：<br> R-CNN（Selective Search + CNN + SVM）<br> SPP-net（ROI Pooling）<br> Fast R-CNN（Selective Search + CNN + ROI）<br> Faster R-CNN（RPN + CNN + ROI）<br> R-FCN</p>
+</li>
+<li><p>基于深度学习的回归方法：YOLO/SSD/DenseBox 等方法；以及最近出现的结合RNN算法的RRC detection；结合DPM的Deformable CNN等。</p>
+</li>
+</ol>
+<p>其中2属于 2-stage模型，3属于1-stage模型，类型区别主要取决于它实现步骤上的区别，2类别是选框与分类两步走，3类别是对预测的目标物体进行回归。本文主要围绕2类型的检测算法进行介绍。</p>
+<h1 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h1><h2 id="R-CNN的简要步骤"><a href="#R-CNN的简要步骤" class="headerlink" title="R-CNN的简要步骤"></a>R-CNN的简要步骤</h2><p>(1) 输入测试图像<br>(2) 利用选择性搜索Selective Search算法在图像中从下到上提取2000个左右的可能包含物体的候选区域Region Proposal<br>(3) 因为取出的区域大小各自不同，所以需要将每个Region Proposal缩放（warp）成统一的227x227的大小并输入到CNN，将CNN的fc7层的输出作为特征<br>(4) 将每个Region Proposal提取到的CNN特征输入到SVM进行分类</p>
+<h2 id="存在问题及改进方式"><a href="#存在问题及改进方式" class="headerlink" title="存在问题及改进方式"></a>存在问题及改进方式</h2><p>问题1：通过selective search提取2000个候选框之后要对每一个框进行特征提取并进行svm分类，计算量相当大，导致检测速度变得异常慢。</p>
+<p>解决方式：先对整个图像进行一次特征提取，然后只需要region proposal在原图的位置映射到卷积特征图上，这样对于一张图像我们只需要提取一次特征就好了。</p>
+<p>问题2：全连接层的输入是固定长度，这时候就需要对图片进行resize操作，会导致失真。</p>
+<p>解决方式：Spatial Pyramid Pooling（空间金字塔池化），在全连接层之前接入一个SPP结构，然后将之输入到全连接层进行分类。</p>
+<p><img src="\source\img\使用SPP层前后的对比.png" alt></p>
 
       
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="Whj 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="Whj 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/目标检测/" rel="tag"><i class="fa fa-tag"></i> 目标检测</a>
+          
+            <a href="/tags/R-CNN/" rel="tag"><i class="fa fa-tag"></i> R-CNN</a>
+          
+            <a href="/tags/Fast-R-CNN/" rel="tag"><i class="fa fa-tag"></i> Fast R-CNN</a>
+          
+            <a href="/tags/Faster-R-CNN/" rel="tag"><i class="fa fa-tag"></i> Faster R-CNN</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/11/动态规划/" rel="next" title="动态规划">
+                <i class="fa fa-chevron-left"></i> 动态规划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -546,8 +649,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -675,6 +787,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目标检测常见算法"><span class="nav-number">2.</span> <span class="nav-text">目标检测常见算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标检测实现的一般思路"><span class="nav-number">2.1.</span> <span class="nav-text">目标检测实现的一般思路</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#R-CNN"><span class="nav-number">3.</span> <span class="nav-text">R-CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#R-CNN的简要步骤"><span class="nav-number">3.1.</span> <span class="nav-text">R-CNN的简要步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存在问题及改进方式"><span class="nav-number">3.2.</span> <span class="nav-text">存在问题及改进方式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -832,6 +961,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -847,6 +980,8 @@
 
   
 
+
+  
 
 
   
