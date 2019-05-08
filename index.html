@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 17:06:46" itemprop="dateModified" datetime="2019-05-08T17:06:46+08:00">2019-05-08</time>
+                <time title="修改时间：2019-05-08 19:00:26" itemprop="dateModified" datetime="2019-05-08T19:00:26+08:00">2019-05-08</time>
               
             
           </span>
@@ -512,7 +512,31 @@
 <p>解决方式：先对整个图像进行一次特征提取，然后只需要region proposal在原图的位置映射到卷积特征图上，这样对于一张图像我们只需要提取一次特征就好了。</p>
 <p>问题2：全连接层的输入是固定长度，这时候就需要对图片进行resize操作，会导致失真。</p>
 <p>解决方式：Spatial Pyramid Pooling（空间金字塔池化），在全连接层之前接入一个SPP结构，然后将之输入到全连接层进行分类。</p>
-<p><img src="\source\img\使用SPP层前后的对比.png" alt></p>
+<p><img src="\img\使用SPP层前后的对比.png" alt="使用SPP层前后的对比"></p>
+<h1 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a>Fast R-CNN</h1><p>显而易见的是，Fast R-CNN是基于R-CNN的改进。在使用了SPP的同时也加解决了对所有region进行特征提取的同时会难以避免地出现重复计算。Fast R-CNN的框架图如下：</p>
+<p><img src="\img\Fast.png" alt="Fast R-CNN的框架图"></p>
+<p>由图像可以看出，主要有两点改进：</p>
+<ol>
+<li>最后一个卷积层后加了一个ROI pooling layer（相当于简化版的SPP）</li>
+<li>损失函数使用了多任务损失函数(multi-task loss)，将边框回归Bounding Box Regression直接加入到CNN网络中训练.</li>
+</ol>
+<p>将原来R-CNN的串行结构改成并行结构。原来的 R-CNN 是先对候选框区域进行分类，判断有没有物体，如果有则对 选定框进行精修回归 。这是一个串联式的任务，那么势必没有并联的快，所以 rbg 就将原有结构改成并行——在分类的同时，对边框进行回归。这一改变将选框和分类的两个loss 一起训练，并吸纳了SPP的优点，最终不仅加快了预测的速度，而且提高了精度。</p>
+<h1 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h1><p>依然是从上一个版本进行迭代，Fast R-CNN的主要时间都花在了找出候选框上，我们需要找一个更高效的方法来求出来这些候选框。于是Faster R-CNN的改进就是选框的工作也给神经网络来做。</p>
+<h2 id="Faster-R-CNN的具体流程"><a href="#Faster-R-CNN的具体流程" class="headerlink" title="Faster R-CNN的具体流程"></a>Faster R-CNN的具体流程</h2><ol>
+<li><p>用一个Region Proposal Network(RPN)替代Selective Search，同时引入anchor box应对目标形状的变化问题（anchor就是位置和大小固定的box，可以理解成事先设置好的固定的proposal）。</p>
+</li>
+<li><p>将RPN放在最后一个卷积层的后面。</p>
+</li>
+<li><p>RPN训练直接得到候选区域。</p>
+</li>
+</ol>
+<p><img src="\img\faster.png" alt="Faster R-CNN"></p>
+<h2 id="RPN的实现原理概述"><a href="#RPN的实现原理概述" class="headerlink" title="RPN的实现原理概述"></a>RPN的实现原理概述</h2><p>​    • 在feature map上滑动窗口<br>　　• 建一个神经网络用于物体分类+框位置的回归<br>　　• 滑动窗口的位置提供了物体的大体位置信息<br>　　• 框的回归提供了框更精确的位置</p>
+<p><img src="\img\RPN.PNG" alt="RPN"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="速度对比"><a href="#速度对比" class="headerlink" title="速度对比"></a>速度对比</h2><p><img src="I:\Personal\Blog\blog\source\img\speed.png" alt></p>
+<h2 id="实现步骤汇总"><a href="#实现步骤汇总" class="headerlink" title="实现步骤汇总"></a>实现步骤汇总</h2><p>R-CNN<br>1.在图像中确定约1000-2000个候选框 (使用选择性搜索Selective Search)<br>2.每个候选框内图像块缩放至相同大小，并输入到CNN内进行特征提取<br>3.对候选框中提取出的特征，使用分类器判别是否属于一个特定类<br>4.对于属于某一类别的候选框，用回归器进一步调整其位置</p>
+<p>Fast R-CNN<br>1.在图像中确定约1000-2000个候选框 (使用选择性搜索Selective Search)<br>2.对整张图片输进CNN，得到feature map<br>3.找到每个候选框在feature map上的映射patch，将此patch作为每个候选框的卷积特征输入到SPP layer和之后的层<br>4.对候选框中提取出的特征，使用分类器判别是否属于一个特定类<br>5.对于属于某一类别的候选框，用回归器进一步调整其位置</p>
+<p>Faster R-CNN<br>1.对整张图片输进CNN，得到feature map<br>2.卷积特征输入到RPN，得到候选框的特征信息<br>3.对候选框中提取出的特征，使用分类器判别是否属于一个特定类<br>4.对于属于某一类别的候选框，用回归器进一步调整其位置</p>
 
           
         
