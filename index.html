@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-09 09:34:27" itemprop="dateModified" datetime="2019-05-09T09:34:27+08:00">2019-05-09</time>
+                <time title="修改时间：2019-05-09 09:36:43" itemprop="dateModified" datetime="2019-05-09T09:36:43+08:00">2019-05-09</time>
               
             
           </span>
@@ -538,7 +538,7 @@
 <h2 id="实现步骤汇总"><a href="#实现步骤汇总" class="headerlink" title="实现步骤汇总"></a>实现步骤汇总</h2><p>R-CNN<br>1.在图像中确定约1000-2000个候选框 (使用选择性搜索Selective Search)<br>2.每个候选框内图像块缩放至相同大小，并输入到CNN内进行特征提取<br>3.对候选框中提取出的特征，使用分类器判别是否属于一个特定类<br>4.对于属于某一类别的候选框，用回归器进一步调整其位置</p>
 <p>Fast R-CNN<br>1.在图像中确定约1000-2000个候选框 (使用选择性搜索Selective Search)<br>2.对整张图片输进CNN，得到feature map<br>3.找到每个候选框在feature map上的映射patch，将此patch作为每个候选框的卷积特征输入到SPP layer和之后的层<br>4.对候选框中提取出的特征，使用分类器判别是否属于一个特定类<br>5.对于属于某一类别的候选框，用回归器进一步调整其位置</p>
 <p>Faster R-CNN<br>1.对整张图片输进CNN，得到feature map<br>2.卷积特征输入到RPN，得到候选框的特征信息<br>3.对候选框中提取出的特征，使用分类器判别是否属于一个特定类<br>4.对于属于某一类别的候选框，用回归器进一步调整其位置</p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
 <li><a href="https://www.jiqizhixin.com/articles/092301" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/092301</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/33981103" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33981103</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/34142321" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/34142321</a></li>
